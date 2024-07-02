@@ -1,0 +1,136 @@
+# Lab 2: Points, Lines, and Planes 
+
+`Nicolas Leffray`
+
+`Due: Tuesday September 26, 2023`
+
+-----------------------------
+Part II: Points
+--
+
+1. Using mathematics or metaphor, explain what a variable stands for. Your explanation should live in the world of ideas. You may find it helpful to think of a particular example:
+ 
+    `let mut x: i32;`
+
+    `x = 9;`
+
+    `x = x + 10;`
+
+    What kind of a thing does 'x' stand for?
+
+    `Answer:`
+
+    - In mathematics a variable typically is a place holder for an unknown quantity or entity. In the case of `x` it stands for a `i32 or 32-bit signed integer`. 
+
+2. Is a “variable” a polymorphic idea? If so, where’s the polymorphism? If not, why not?
+
+`Answer:`
+
+ - Overall a `variable` is not a polymorphic concept. Its a container that can store data of different types such a strings, integers, floats and data structures of various types. Typically used as a way to handle data. But they can help in enabling polymorphic classes.
+
+3. Using mathematics or metaphor, explain what a pointer stands for. Your explanation should live in the world of ideas. You may find it helpful to think of a particular example, in this case using C:
+
+    `int *p;`
+
+    `p = malloc(sizeof(*p));`
+
+    `assert(p != NULL);`
+
+    `*p = 9;`
+
+    `*p = *p + 10;`
+
+    or Rust:
+
+    `let p = &mut 9;`
+
+    `*p += 10;`
+
+What kind of a thing does `*p` stand for?
+ 
+`Answer:` 
+ - In C/C++ `*p`, represents the value stored at the memory location pointed to the variable `p`. Specifically its the value `19`.
+
+4. Is a “pointer” a polymorphic idea? If so, where’s the polymorphism? If not, why not?
+    
+`Answer:`
+
+- I believe a `pointer` is not a polymorphic concept. A pointer has a specific operation in handling memory management. But in regards to object oriented languages like Java or C++ you would need to use pointers when dealing with inheritence.
+
+Part II: LINES
+--
+
+5. What, in the world of ideas, is an array or vector? (Don’t forget parametric polymorphism: How many type parameters are there and what do they stand for? Is an array parametric in anything else?)
+
+`Answer:`
+
+- an array or vector in the simplist form is a data structure that collects and stores data of the same type. In the case of parametric polymorphism where the purpose of writing code with parametric polymorphism in mind is that the code can be used with several different types, without being changed. 
+
+- arrays and vectors can be parametric when it comes to there types, which allows them to be adaptable and allows for code to be reusable. 
+    
+    - integer, float, String but it overall depends on the language that you are using.
+
+6. You identify a variable by its name. Array elements have no names. How do you identify an element of an array?
+
+`Answer:` 
+
+- you typically identify an array by its index position within the array, which points to specific data value inside the array. 
+
+7. In the world of code, what would be a good representation of a single array element? Can you use your answers to the questions above to argue your case?
+
+`Answer:`
+
+- well the an index value is a good representation of a single array element. Typically only one piece of data is stored at each index value.
+
+8. Given your answer to question 7, supposing you wanted to treat ‘array’ as an abstract data type, what operations would you want to provide on single array elements? What prototypes would the functions representing those operations have? That is, what would the functions take as arguments and
+return as results?
+
+`Answer:`
+
+- When thing of this from a object oriented viewpoint you would want to create your `getters and setters` for the array, a  which allows you to return a value based on the index position and modify a value at a specific index position. You would also need a method for removing, appending.
+
+`Example:` 
+
+- `getData(array, index) return: value at the index position`
+- `setData(array, index) No return value`
+- `removeData(array, index) No return value`
+- `appendData(array, index) No return value`
+- `getlength(array) return: number of elements in array`
+
+Part III: PLANES
+--
+9. What, in the world of ideas, is a two-dimensional array?
+
+`Answer:` 
+
+- A 2D-Array is a way to store data in a table format with rows and columns. Like a matrix,grid or image. 
+
+10. How do you identify an element of a two-dimensional array?
+
+`Answer:`
+
+- well by its row and column index location. 
+
+- Example: `tempArray[row][column]` -> this is how you would repressent C++ to access rows and columns in the 2d array.
+
+PART IV: FROM LINES TO PLANES
+-- 
+11. In your next homework assignment, you are asked to design and implement abstractions for two-dimensional arrays. We are asking you not to implement two-dimensional arrays on the bare metal but rather to use a tool provided by the standard library: the one-dimensional array, known in
+Rust as a Vec. The elements of the two-dimensional arrays should be set in one-to-one correspondence with elements of one or more one-dimensional arrays.
+`The key question is this:`
+
+- How do you relate each element in a two-dimensional array to a corresponding element in some one-dimensional array?
+
+A useful answer will probably contain a mix of Rust expressions and mathematics, or perhaps all mathematics. Once you get a useful answer, and you can convince a skeptical listener that you have truly established a one-to-one correspondence, the rest of the design and implementation are much easier. How do you relate each element in a two-dimensional array to one and only one corresponding element in some one-dimensional array?
+
+`Answer:`
+
+- `creating 2D Array and let rows represent the number of rows and let columns represent the number of columns`
+
+- `creating a 1D Array to store the converted elements from the 2D array`
+
+- `creating a flattening method by using the index values for row and column of the 2D array. You take the index values and you multiply by the number of columns.`
+- `Example:`
+- `let newvalue = 2darray[i][j]`
+-  `let indexID = i * Column * j;`
+- `vec[indexID] = newvalue;`
