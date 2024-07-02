@@ -1,0 +1,12 @@
+
+
+PART C: PROGRAMMINIG TECHNIQUE
+Since I did this assignment alone I will respond to both questions:
+After completing my design document and laying the foundation for the array2 struct, 
+I encountered a significant challenge—working with a new programming language. 
+Although I had a clear understanding of the task at hand, the unfamiliarity of the language felt overwhelming.
+To address this challenge effectively, I made a deliberate effort to enhance my coding efficiency for this assignment.
+My approach involved better time management and breaking down the assignment into manageable components. Each day leading up to the due date, 
+I focused on implementing a specific element of the assignment. As I look ahead, I'm committed to refining my naming conventions and simplifying my code. 
+Additionally, I plan to adopt a strategy of breaking down programming assignments into smaller, more manageable problems as I know the assignments get more demanding as the semester goes on. 
+This approach will allow me to concentrate on solving simpler tasks, gradually building up to tackle the larger issues.
